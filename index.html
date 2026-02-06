@@ -6,7 +6,22 @@
 </head>
 <body>
     <h2>Redirecting...</h2>
-    <script src="appjs.js"></script>
+    <!-- <script src="appjs.js"></script> -->
+
+  <script>
+ 
+    var isAndroid = /Android/i.test(navigator.userAgent);
+
+  if (isAndroid) {
+    
+    window.location.href =
+      "https://play.google.com/store/apps/details?id=com.vltd.tracker";
+  } else {
+    
+    document.body.innerHTML =
+      "<h3>Please open this link on Android device</h3>";
+  }
+</script>
 </body>
 
 </html>
