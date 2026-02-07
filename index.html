@@ -1,25 +1,189 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>VTS Registration</title>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #22c55e;
+      --border: #1f2933;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #020617, #020617 40%, #020617);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header { position: sticky; top: 0; background: rgba(2,6,23,.8); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .logo { font-weight: 700; letter-spacing: .3px; }
+    .nav-links { display: flex; gap: 16px; }
+    .btn { padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); }
+    .btn.primary { background: var(--primary); color: #052e16; border-color: transparent; }
+
+    /* Hero */
+    .hero { padding: 64px 0 40px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; }
+    .hero h1 { font-size: clamp(28px, 5vw, 44px); margin: 0 0 12px; }
+    .hero p { color: var(--muted); line-height: 1.7; }
+    .card { background: radial-gradient(1200px 200px at -20% -20%, rgba(34,197,94,.08), transparent), var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+
+    /* Sections */
+    section { padding: 40px 0; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .section-title h2 { margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    /* Skills */
+    .pill { display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); margin: 6px 6px 0 0; color: var(--muted); }
+
+    /* Projects */
+    .project h3 { margin: 0 0 6px; }
+    .project p { margin: 0; color: var(--muted); }
+    .tags { margin-top: 10px; }
+    .tag { font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); margin-right: 6px; }
+
+    /* Experience */
+    .timeline { border-left: 2px dashed var(--border); padding-left: 16px; }
+    .timeline .item { margin-bottom: 16px; }
+    .timeline .item h4 { margin: 0; }
+    .timeline .item span { color: var(--muted); font-size: 13px; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    input, textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border); background: #020617; color: var(--text); }
+    textarea { min-height: 120px; }
+
+    footer { border-top: 1px solid var(--border); color: var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <h2>Redirecting...</h2>
-    <script>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">YourName</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact" class="btn primary">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-    var isAndroid = /Android/i.test(navigator.userAgent);
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <h1>Mobile & Web Developer</h1>
+        <p>I build fast, secure apps with clean UI—Flutter, APIs, payments, maps, and dashboards.</p>
+        <div style="margin-top:16px">
+          <a class="btn primary" href="#projects">View Work</a>
+          <a class="btn" href="#contact" style="margin-left:8px">Hire Me</a>
+        </div>
+      </div>
+      <div class="card">
+        <strong>Quick Info</strong>
+        <p class="muted">📍 India • 💼 Freelance / Full-time • ✉️ email@example.com</p>
+      </div>
+    </section>
 
-  if (isAndroid) {
-    
-    window.location.href =
-      "https://play.google.com/store/apps/details?id=com.vltd.tracker";
-  } else {
-    
-    document.body.innerHTML =
-      "<h3>Please open this link on Android device</h3>";
-  }
+    <!-- About -->
+    <section id="about">
+      <div class="section-title"><h2>About</h2></div>
+      <div class="card">
+        <p>I focus on scalable architecture, secure payment flows, and delightful UX. Experienced with Google Maps, Payment Gateways, and REST APIs.</p>
+      </div>
+    </section>
 
-    </script>
+    <!-- Skills -->
+    <section id="skills">
+      <div class="section-title"><h2>Skills</h2></div>
+      <div class="card">
+        <span class="pill">Flutter</span>
+        <span class="pill">Dart</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">Node.js</span>
+        <span class="pill">PHP</span>
+        <span class="pill">MySQL</span>
+        <span class="pill">Google Maps</span>
+        <span class="pill">Payment Gateway</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-title"><h2>Projects</h2></div>
+      <div class="grid">
+        <div class="card project">
+          <h3>Vehicle Tracking App</h3>
+          <p>Live tracking with markers, polylines, and geofencing.</p>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">Maps</span></div>
+        </div>
+        <div class="card project">
+          <h3>Payment Integration</h3>
+          <p>Secure checkout with UPI, cards, and server verification.</p>
+          <div class="tags"><span class="tag">Razorpay</span><span class="tag">API</span></div>
+        </div>
+        <div class="card project">
+          <h3>Admin Dashboard</h3>
+          <p>Reports, refunds, and settlements.</p>
+          <div class="tags"><span class="tag">Web</span><span class="tag">Charts</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <div class="section-title"><h2>Experience</h2></div>
+      <div class="card timeline">
+        <div class="item">
+          <h4>Senior Flutter Developer</h4>
+          <span>2023 – Present</span>
+        </div>
+        <div class="item">
+          <h4>Backend Developer</h4>
+          <span>2021 – 2023</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-title"><h2>Contact</h2></div>
+      <div class="card contact-grid">
+        <input placeholder="Your Name" />
+        <input placeholder="Email" />
+        <textarea placeholder="Message"></textarea>
+        <div>
+          <button class="btn primary" style="width:100%">Send Message</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 YourName. All rights reserved.</div>
+  </footer>
 </body>
-
 </html>
